@@ -8,7 +8,8 @@ import Bar from './components/Bar.vue'
 const routes = [
   { path: '/', component: Home },
   { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar  }
+  { path: '/bar', component: Bar  },
+  { path: '/**/', component: Home }
 ]
 const router = new Router({
   mode: 'history',
