@@ -6,19 +6,13 @@ const routes = [
     path: '/',
     meta: {layout: 'base'},
     component: () => import('./components/Home.vue') 
-  },
-  { 
-    path: '/home', 
-    name: 'home',
-    meta: {layout: 'base'},
-    component: () => import('./components/Home.vue') 
-  },
+  },  
   { 
     path: '/practic', 
     name: 'practic',
     meta: {layout: 'practic'},
-    component: () => import('./components/practic/Practic.vue') 
-  },
+    component: () => import('./components/practic/Home.vue') 
+  },  
   { 
     path: '/practic/categories', 
     name: 'categories',
