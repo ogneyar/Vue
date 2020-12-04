@@ -9,7 +9,7 @@
       :to="link.url"
       :exact="link.exact"
     >
-      <hr v-if="link.exact" />
+      <hr v-if="link.url=='/'" />
       <a href="#" class="waves-effect waves-orange pointer">{{link.title}}</a>
     </router-link>
   </ul>
@@ -22,7 +22,7 @@ export default {
   props: ['value'],
   data: () => ({
     links: [
-      { title: 'Счет', url: '/practic' },
+      { title: 'Счет', url: '/practic', exact: true  },
       { title: 'История', url: '/practic/history' },
       { title: 'Планирование', url: '/practic/planning' },
       { title: 'Новая запись', url: '/practic/record' },
