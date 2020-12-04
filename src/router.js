@@ -20,6 +20,48 @@ const routes = [
     component: () => import('./components/practic/Categories.vue') 
   },
   { 
+    path: '/practic/profile', 
+    name: 'profile',
+    meta: {layout: 'practic'},
+    component: () => import('./components/practic/Profile.vue') 
+  },
+  { 
+    path: '/practic/record', 
+    name: 'record',
+    meta: {layout: 'practic'},
+    component: () => import('./components/practic/Record.vue') 
+  },
+  { 
+    path: '/practic/planning', 
+    name: 'planning',
+    meta: {layout: 'practic'},
+    component: () => import('./components/practic/Planning.vue') 
+  },
+  { 
+    path: '/practic/history', 
+    name: 'history',
+    meta: {layout: 'practic'},
+    component: () => import('./components/practic/History.vue') 
+  },
+  { 
+    path: '/practic/detail', 
+    name: 'detail',
+    meta: {layout: 'practic'},
+    component: () => import('./components/practic/Detail.vue') 
+  },
+  { 
+    path: '/practic/login', 
+    name: 'login',
+    meta: {layout: 'practic-auth'},
+    component: () => import('./components/practic/Login.vue') 
+  },
+  { 
+    path: '/practic/register', 
+    name: 'register',
+    meta: {layout: 'practic-auth'},
+    component: () => import('./components/practic/Register.vue') 
+  },
+  { 
     path: '/foo', 
     name: 'foo',
     meta: {layout: 'base'},
@@ -43,6 +85,6 @@ const router = new Router({
 })
 
 Vue.use(Router)
-Vue.config.productionTip = false
+
 
 export default router

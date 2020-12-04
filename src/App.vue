@@ -9,10 +9,11 @@
 <script>
 import BaseLayout from '@/layouts/BaseLayout.vue'
 import PracticLayout from '@/layouts/PracticLayout.vue'
+import PracticAuthLayout from '@/layouts/PracticAuthLayout.vue'
 export default {
   name: 'App',
   components: {
-    BaseLayout, PracticLayout
+    BaseLayout, PracticLayout, PracticAuthLayout
   },
   computed: {
     layout() {

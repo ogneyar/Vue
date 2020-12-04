@@ -1,25 +1,34 @@
 <template>
-  <ul class="sidenav app-sidenav open">
-    <li>
-      <router-link to="/" class="waves-effect waves-orange pointer">Home Page</router-link>
-    </li>
-    <li>
-      <router-link to="/practic" class="waves-effect waves-orange pointer">Practic</router-link>
-    </li>
-    <li>
-      <router-link to="#" class="waves-effect waves-orange pointer">Счет</router-link>
-    </li>
-    <li>
-      <router-link to="#" class="waves-effect waves-orange pointer">История</router-link>
-    </li>
-    <li>
-      <router-link to="#" class="waves-effect waves-orange pointer">Планирование</router-link>
-    </li>
-    <li>
-      <router-link to="#" class="waves-effect waves-orange pointer">Новая запись</router-link>
-    </li>
-    <li>
-      <router-link to="/practic/categories" class="waves-effect waves-orange pointer">Категории</router-link>
-    </li>
+
+  <ul class="sidenav app-sidenav" :class="{open: value}">
+    <router-link
+      v-for="link in links"
+      :key="link.url"
+      tag="li"
+      active-class="active"
+      :to="link.url"
+      :exact="link.exact"
+    >
+      <hr v-if="link.exact" />
+      <a href="#" class="waves-effect waves-orange pointer">{{link.title}}</a>
+    </router-link>
   </ul>
+
 </template>
+
+
+<script>
+export default {
+  props: ['value'],
+  data: () => ({
+    links: [
+      { title: 'Счет', url: '/practic' },
+      { title: 'История', url: '/practic/history' },
+      { title: 'Планирование', url: '/practic/planning' },
+      { title: 'Новая запись', url: '/practic/record' },
+      { title: 'Категории', url: '/practic/categories' },
+      { title: 'ВЫХОД из Practic', url: '/', exact: true }
+    ]
+  })
+}
+</script>

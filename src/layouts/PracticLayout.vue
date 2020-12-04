@@ -1,11 +1,11 @@
 <template>        
     <div class="app-main-layout">
           
-      <Navbar />
+      <Navbar @click="isOpen = !isOpen"/>
 
-      <Sidebar />    
+      <Sidebar v-model="isOpen"/>    
 
-      <main class="app-content">
+      <main class="app-content" :class="{full: !isOpen}">
         <div class="app-page">
 
           <router-view />
@@ -14,9 +14,9 @@
       </main>
 
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large blue" href="#">
+        <router-link to="/practic/record" class="btn-floating btn-large blue">
           <i class="large material-icons">add</i>
-        </a>
+        </router-link>
       </div>
 
     </div>
@@ -30,7 +30,11 @@ export default {
   name: 'practic-layout',
   components: {
     Navbar, Sidebar
-  }
+  },
+  data: () => ({
+    isOpen: true,
+    loading: true
+  }),
 }
 </script>
 

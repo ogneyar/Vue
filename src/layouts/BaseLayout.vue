@@ -1,6 +1,6 @@
 <template>
   <div id="base"> 
-    <img alt="Vue logo" src="@/assets/logo.png" id="logo">
+    <img alt="Vue logo" src="@/assets/logo.png" id="logo" v-on:click="clickable">
 
     <hr>
     <router-link to="/" class="router_link">Home Page</router-link>
@@ -10,8 +10,27 @@
     
     <router-view></router-view>
     <hr>    
-    <footer>
-      <h3>Подвал</h3>
-    </footer>
+
+    <Footer v-if="this.$route.path=='/foo'||this.$route.path=='/bar'"/>
   </div>
 </template>
+
+<script>
+import Footer from '@/components/includes/Footer'
+export default {  
+  methods: {
+    clickable() {
+      console.log('click on image');
+    }
+  },
+  data: () => ({
+    foo: false
+  }),
+  components: {
+    Footer
+  },
+  created: () => {    
+    console.log('created')
+  }
+}
+</script>
