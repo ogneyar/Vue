@@ -1,10 +1,6 @@
-<template>
-  <div>      
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        
+<template>        
     <div class="app-main-layout">
-      
+          
       <Navbar />
 
       <Sidebar />    
@@ -22,9 +18,8 @@
           <i class="large material-icons">add</i>
         </a>
       </div>
+
     </div>
-    
-  </div>
 </template>
 
 <script>
