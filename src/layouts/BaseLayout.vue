@@ -29,8 +29,8 @@ export default {
   components: {
     Footer
   },
-  created: () => {    
-    console.log('created')
+  created() {
+    // console.log('created')
   }
 }
 </script>

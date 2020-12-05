@@ -15,7 +15,8 @@
     "core-js": "^3.6.5",
     "express": "^4.17.1",
     "vue": "^2.6.11",
-    "vue-router": "^3.4.9"
+    "vue-router": "^3.4.9",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
