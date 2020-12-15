@@ -68,9 +68,10 @@ let flagMessage = true
 export default {
   name: 'login',
   mounted() {
-    if (messages[this.$route.query.message]&&(flagMessage))
+    if (messages[this.$route.query.message]&&(flagMessage)) {
       this.$message(messages[this.$route.query.message])
-    flagMessage = false
+      flagMessage = false
+    }
   },
   methods: {
     async submitable() {
