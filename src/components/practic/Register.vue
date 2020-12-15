@@ -116,7 +116,7 @@ import { email, required, minLength } from 'vuelidate/lib/validators'
 export default {
   name: 'register',
   methods: {
-    submitable() {
+    async submitable() {
       if (this.$v.$invalid) {
         // устанавливает флаг $dirty модели и всех ее дочерних элементов в значение true.
         this.$v.$touch()        
@@ -127,10 +127,12 @@ export default {
         password: this.password,
         name: this.name
       }
-
-      console.log(formData);
-
-      this.$router.push('/practic')
+      try{
+        await this.$store.dispatch('register', formData)
+        this.$router.push('/practic')
+      }catch(e) {
+        console.log(e);
+      }
     }
   },
   data: () => ({

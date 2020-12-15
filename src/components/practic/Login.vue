@@ -59,25 +59,37 @@
 
 <script>
 import { email, required, minLength } from 'vuelidate/lib/validators'
+import messages from '@/utils/messages'
+
+// флаг для того чтобы сообщение (M.Toast) всплывало только один раз при выходе
+// без этого флага сообщения дублируются и показываются даже при входе
+let flagMessage = true
 
 export default {
   name: 'login',
+  mounted() {
+    if (messages[this.$route.query.message]&&(flagMessage))
+      this.$message(messages[this.$route.query.message])
+    flagMessage = false
+  },
   methods: {
-    submitable() {
+    async submitable() {
       if (this.$v.$invalid) {
         // устанавливает флаг $dirty модели и всех ее дочерних элементов в значение true.
         this.$v.$touch()
         return
       }
-
       const formData = {
         email: this.email,
         password: this.password
       }
-
-      console.log(formData);
-
-      this.$router.push('/practic')
+      try {
+        await this.$store.dispatch('login', formData)
+        flagMessage = true // флаг для того чтобы сообщение (M.Toast) всплывало только один
+        this.$router.push('/practic')
+      }catch(e) {
+        console.log("throw: ", e);
+      }
     }
   },
   data: () => ({
