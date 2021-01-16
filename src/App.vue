@@ -1,5 +1,5 @@
 <template>
-  <div id="app">     
+  <div id="app">
     <component :is="layout">
       <router-view/>
     </component>
@@ -10,6 +10,7 @@
 import BaseLayout from '@/layouts/BaseLayout.vue'
 import PracticLayout from '@/layouts/PracticLayout.vue'
 import PracticAuthLayout from '@/layouts/PracticAuthLayout.vue'
+
 export default {
   name: 'App',
   components: {
@@ -20,7 +21,6 @@ export default {
       return (this.$route.meta.layout || 'base') + '-layout'
     }
   }
-
 }
 </script>
 

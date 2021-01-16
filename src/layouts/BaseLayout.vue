@@ -9,7 +9,7 @@
     <router-link to="/bar" class="router_link">Go to Bar</router-link>
     
     <router-view></router-view>
-    <hr>    
+    <hr>
 
     <Footer v-if="this.$route.path=='/foo'||this.$route.path=='/bar'"/>
   </div>
@@ -17,6 +17,7 @@
 
 <script>
 import Footer from '@/components/includes/Footer'
+
 export default {  
   methods: {
     clickable() {
